@@ -53,7 +53,6 @@ body {
   display: inline-block;
   padding: 30px 0;
 }
-
 .site-nav__link:hover,
 .site-nav__link:focus {
   color: #405952;
@@ -100,6 +99,14 @@ body {
       font-size: 2em;
       width: 100%;
     }
+    & .projects__img-thumb {
+      &::before {
+        padding-top: 27.58%;
+      }
+      &:hover img {
+        object-fit: fill;
+      }
+    }
   }
 }
 .projects__img-thumb {
@@ -130,8 +137,8 @@ body {
   background-color: rgba(0, 0, 0, 0.7);
   transition: background-color 0.3s, fill 0.3s;
 }
-.projects__img-thumb:hover:after,
-.projects__img-thumb:focus:after {
+.projects__item .projects__img-thumb:hover:after,
+.projects__item .projects__img-thumb:focus:after {
   background-color: rgba(0, 0, 0, 0.2);
 }
 .projects__overlay {
@@ -141,7 +148,8 @@ body {
   transform: translateY(0);
   transition: transform 0.3s, fill 0.3s;
 }
-.projects__item:hover .projects__overlay {
+.projects__item:hover .projects__overlay,
+.projects__item:focus .projects__overlay {
   transform: translateY(200%);
 }
 .overlay__text {
